@@ -63,9 +63,7 @@ export default function Navbar() {
 
       <nav className="relative h-16 max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center text-white font-extrabold text-sm transition-transform group-hover:scale-110">
-            P
-          </div>
+          <img src="/favicon.jpg" alt="Pulsemation" className="w-8 h-8 rounded-lg object-cover transition-transform group-hover:scale-110" />
           <span className="text-lg font-bold text-white tracking-tight">
             PULSEMATION
           </span>
