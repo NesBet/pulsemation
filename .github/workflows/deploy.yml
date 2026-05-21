@@ -44,6 +44,5 @@ jobs:
               ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
               "cd ${{ secrets.SERVER_PATH }} && \
                git pull origin main && \
-               docker compose down && \
                docker compose up -d --build && \
                docker image prune -f"
