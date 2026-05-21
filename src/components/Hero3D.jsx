@@ -1,10 +1,64 @@
-import { Suspense } from 'react'
+import { Suspense, useState, useEffect, useCallback } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment } from '@react-three/drei'
 import { motion } from 'framer-motion'
 import ParticleField from './ParticleField'
 import FloatingGeometry from './FloatingGeometry'
 import { usePerformance } from '../hooks/usePerformance'
+
+const words = ['Pulse', 'Connect', 'Work', 'Interact', 'Move']
+
+function Typewriter() {
+  const [text, setText] = useState('')
+  const [wordIdx, setWordIdx] = useState(0)
+  const [phase, setPhase] = useState('typing')
+
+  const tick = useCallback(() => {
+    const target = words[wordIdx]
+    if (phase === 'typing') {
+      if (text.length < target.length) {
+        setText(target.slice(0, text.length + 1))
+      } else {
+        setPhase('pause')
+      }
+    } else if (phase === 'pause') {
+      setPhase('erasing')
+    } else if (phase === 'erasing') {
+      if (text.length > 0) {
+        setText(text.slice(0, -1))
+      } else {
+        setPhase('wait')
+      }
+    } else {
+      setWordIdx((wordIdx + 1) % words.length)
+      setPhase('typing')
+    }
+  }, [text, wordIdx, phase])
+
+  useEffect(() => {
+    const delays = {
+      typing: 130,
+      pause: 1600,
+      erasing: 80,
+      wait: 400,
+    }
+    const id = setTimeout(tick, delays[phase])
+    return () => clearTimeout(id)
+  }, [tick, phase])
+
+  const maxLen = Math.max(...words.map((w) => w.length))
+
+  return (
+    <span className="gradient-text" style={{ display: 'inline-block' }}>
+      <span
+        style={{ display: 'inline-block', minWidth: `${maxLen}ch`, textAlign: 'left' }}
+      >
+        {text}
+        <span className="opacity-80 font-light animate-pulse">|</span>
+      </span>
+    </span>
+  )
+}
 
 function Scene() {
   const perf = usePerformance()
@@ -65,7 +119,7 @@ export default function Hero3D() {
             className="text-[clamp(2rem,8vw,5rem)] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight text-white"
           >
             Workflows that{' '}
-            <span className="gradient-text">pulse</span>
+            <Typewriter />
             <br />
             with intelligence.
           </motion.h1>
@@ -106,7 +160,7 @@ export default function Hero3D() {
             animate={{ opacity: 1 }}
             className="mt-12 sm:mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 text-gray-500"
           >
-            {['Fortune 500', 'Y Combinator', 'TechCrunch'].map((badge) => (
+            {['Workflows', 'Industrial', 'Home'].map((badge) => (
               <span key={badge} className="text-xs font-semibold tracking-wider opacity-50">
                 {badge}
               </span>
