@@ -40,7 +40,7 @@ jobs:
           ssh -i ~/.ssh/deploy_key \
               -o StrictHostKeyChecking=no \
               ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
-              "echo 'VITE_API_URL=${{ secrets.VITE_API_URL }}' > ${{ secrets.SERVER_PATH }}/.env"
+              "echo 'VITE_N8N_WEBHOOK_URL=${{ secrets.VITE_API_URL }}' > ${{ secrets.SERVER_PATH }}/.env"
       - name: Deploy to server via SSH
         run: |
           ssh -i ~/.ssh/deploy_key \
