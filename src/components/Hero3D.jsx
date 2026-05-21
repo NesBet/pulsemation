@@ -6,7 +6,7 @@ import ParticleField from "./ParticleField";
 import FloatingGeometry from "./FloatingGeometry";
 import { usePerformance } from "../hooks/usePerformance";
 
-const words = ["pulse", "connect", "work", "interact", "move"];
+const words = ["pulse", "connect", "work", "interact", "run"];
 
 function Typewriter() {
   const [text, setText] = useState("");
