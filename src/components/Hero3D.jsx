@@ -124,7 +124,7 @@ export default function Hero3D() {
         <div className="max-w-3xl">
           <motion.div {...fadeIn}>
             <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5 mb-6">
-              Automation as a Service
+              Heartbeat of Automation
             </span>
           </motion.div>
 
