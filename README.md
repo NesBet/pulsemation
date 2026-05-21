@@ -169,4 +169,4 @@ All rights reserved. This project is proprietary software owned by Pulsemation.
 
 - **Phone:** [+254780237794](tel:254780237794)
 - **Email:** [pulsemationltd@gmail.com](mailto:pulsemationltd@gmail.com)
-- **Founder:** Nehemiah Kibet
+- **Founder:** Nehemiah Kibet - Automation Engineer
