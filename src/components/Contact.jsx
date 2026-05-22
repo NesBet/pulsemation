@@ -116,9 +116,9 @@ export default function Contact() {
     e.preventDefault();
     setState("loading");
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const serviceID = service_3zghxuh;
+    const templateID = template_zkho7hc;
+    const publicKey = Bwryjvg8vfD1bEay_;
 
     if (!serviceID || !templateID || !publicKey) {
       setState("error");
@@ -161,7 +161,8 @@ export default function Contact() {
       setState("error");
       setToast({
         type: "error",
-        message: "Could not send your message. Please try again or email us directly.",
+        message:
+          "Could not send your message. Please try again or email us directly.",
       });
       setTimeout(() => setState("idle"), 2000);
     }
@@ -221,32 +222,120 @@ export default function Contact() {
             {state === "success" ? (
               <div className="text-center py-16">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-6">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#34d399"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Message received!</h3>
-                <p className="text-gray-400">Our team will reach out within 24 hours to schedule your free audit.</p>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Message received!
+                </h3>
+                <p className="text-gray-400">
+                  Our team will reach out within 24 hours to schedule your free
+                  audit.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-                  <input ref={nameRef} type="text" placeholder="Full name" required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm" />
-                  <input ref={emailRef} type="email" placeholder="Work email" required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm" />
+                  <input
+                    ref={nameRef}
+                    type="text"
+                    placeholder="Full name"
+                    required
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm"
+                  />
+                  <input
+                    ref={emailRef}
+                    type="email"
+                    placeholder="Work email"
+                    required
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm"
+                  />
                 </div>
-                <input ref={companyRef} type="text" placeholder="Company name" className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm" />
-                <select ref={teamRef} defaultValue="" required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white focus:outline-none focus:border-cyan-500/40 transition-all text-sm appearance-none" style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: "right 1rem center", backgroundRepeat: "no-repeat", backgroundSize: "1.5em 1.5em" }}>
-                  <option value="" disabled className="bg-[#0a0a1a]">Team size</option>
-                  <option value="1-10" className="bg-[#0a0a1a]">1-10</option>
-                  <option value="11-50" className="bg-[#0a0a1a]">11-50</option>
-                  <option value="51-200" className="bg-[#0a0a1a]">51-200</option>
-                  <option value="200+" className="bg-[#0a0a1a]">200+</option>
+                <input
+                  ref={companyRef}
+                  type="text"
+                  placeholder="Company name"
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm"
+                />
+                <select
+                  ref={teamRef}
+                  defaultValue=""
+                  required
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white focus:outline-none focus:border-cyan-500/40 transition-all text-sm appearance-none"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                    backgroundPosition: "right 1rem center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "1.5em 1.5em",
+                  }}
+                >
+                  <option value="" disabled className="bg-[#0a0a1a]">
+                    Team size
+                  </option>
+                  <option value="1-10" className="bg-[#0a0a1a]">
+                    1-10
+                  </option>
+                  <option value="11-50" className="bg-[#0a0a1a]">
+                    11-50
+                  </option>
+                  <option value="51-200" className="bg-[#0a0a1a]">
+                    51-200
+                  </option>
+                  <option value="200+" className="bg-[#0a0a1a]">
+                    200+
+                  </option>
                 </select>
-                <textarea ref={messageRef} rows={4} placeholder="Describe your workflow or automation needs..." required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm resize-none" />
-                <button type="submit" disabled={state === "loading"} className="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-sm tracking-wide hover:shadow-lg hover:shadow-cyan-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                <textarea
+                  ref={messageRef}
+                  rows={4}
+                  placeholder="Describe your workflow or automation needs..."
+                  required
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm resize-none"
+                />
+                <button
+                  type="submit"
+                  disabled={state === "loading"}
+                  className="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-sm tracking-wide hover:shadow-lg hover:shadow-cyan-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
                   {state === "loading" ? (
-                    <><svg className="animate-spin" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" opacity="0.25" /><path d="M12 2a10 10 0 019.95 9" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg> Sending...</>
-                  ) : "Send Message"}
+                    <>
+                      <svg
+                        className="animate-spin"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          opacity="0.25"
+                        />
+                        <path
+                          d="M12 2a10 10 0 019.95 9"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                        />
+                      </svg>{" "}
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             )}
@@ -262,32 +351,120 @@ export default function Contact() {
             {state === "success" ? (
               <div className="text-center py-16">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-6">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#34d399"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Message received!</h3>
-                <p className="text-gray-400">Our team will reach out within 24 hours to schedule your free audit.</p>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Message received!
+                </h3>
+                <p className="text-gray-400">
+                  Our team will reach out within 24 hours to schedule your free
+                  audit.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-                  <input ref={nameRef} type="text" placeholder="Full name" required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm" />
-                  <input ref={emailRef} type="email" placeholder="Work email" required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm" />
+                  <input
+                    ref={nameRef}
+                    type="text"
+                    placeholder="Full name"
+                    required
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm"
+                  />
+                  <input
+                    ref={emailRef}
+                    type="email"
+                    placeholder="Work email"
+                    required
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm"
+                  />
                 </div>
-                <input ref={companyRef} type="text" placeholder="Company name" className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm" />
-                <select ref={teamRef} defaultValue="" required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white focus:outline-none focus:border-cyan-500/40 transition-all text-sm appearance-none" style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: "right 1rem center", backgroundRepeat: "no-repeat", backgroundSize: "1.5em 1.5em" }}>
-                  <option value="" disabled className="bg-[#0a0a1a]">Team size</option>
-                  <option value="1-10" className="bg-[#0a0a1a]">1-10</option>
-                  <option value="11-50" className="bg-[#0a0a1a]">11-50</option>
-                  <option value="51-200" className="bg-[#0a0a1a]">51-200</option>
-                  <option value="200+" className="bg-[#0a0a1a]">200+</option>
+                <input
+                  ref={companyRef}
+                  type="text"
+                  placeholder="Company name"
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm"
+                />
+                <select
+                  ref={teamRef}
+                  defaultValue=""
+                  required
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white focus:outline-none focus:border-cyan-500/40 transition-all text-sm appearance-none"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                    backgroundPosition: "right 1rem center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "1.5em 1.5em",
+                  }}
+                >
+                  <option value="" disabled className="bg-[#0a0a1a]">
+                    Team size
+                  </option>
+                  <option value="1-10" className="bg-[#0a0a1a]">
+                    1-10
+                  </option>
+                  <option value="11-50" className="bg-[#0a0a1a]">
+                    11-50
+                  </option>
+                  <option value="51-200" className="bg-[#0a0a1a]">
+                    51-200
+                  </option>
+                  <option value="200+" className="bg-[#0a0a1a]">
+                    200+
+                  </option>
                 </select>
-                <textarea ref={messageRef} rows={4} placeholder="Describe your workflow or automation needs..." required className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm resize-none" />
-                <button type="submit" disabled={state === "loading"} className="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-sm tracking-wide hover:shadow-lg hover:shadow-cyan-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                <textarea
+                  ref={messageRef}
+                  rows={4}
+                  placeholder="Describe your workflow or automation needs..."
+                  required
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/[0.02] transition-all text-sm resize-none"
+                />
+                <button
+                  type="submit"
+                  disabled={state === "loading"}
+                  className="w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-sm tracking-wide hover:shadow-lg hover:shadow-cyan-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
                   {state === "loading" ? (
-                    <><svg className="animate-spin" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" opacity="0.25" /><path d="M12 2a10 10 0 019.95 9" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg> Sending...</>
-                  ) : "Send Message"}
+                    <>
+                      <svg
+                        className="animate-spin"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          opacity="0.25"
+                        />
+                        <path
+                          d="M12 2a10 10 0 019.95 9"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                        />
+                      </svg>{" "}
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             )}
