@@ -116,9 +116,9 @@ export default function Contact() {
     e.preventDefault();
     setState("loading");
 
-    const serviceID = service_3zghxuh;
-    const templateID = template_zkho7hc;
-    const publicKey = Bwryjvg8vfD1bEay_;
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     if (!serviceID || !templateID || !publicKey) {
       setState("error");
