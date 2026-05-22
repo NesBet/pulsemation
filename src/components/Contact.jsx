@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { usePerformance } from "../hooks/usePerformance";
 
 const TOAST_DURATION = 5000;
@@ -14,11 +15,11 @@ function Toast({ type, message, onClose }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 80, scale: 0.95 }}
-      animate={{ opacity: 1, x: 0, scale: 1 }}
-      exit={{ opacity: 0, x: 80, scale: 0.95 }}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 40, scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
-      className="fixed top-4 right-4 left-4 sm:left-auto sm:top-6 sm:right-6 z-[100] max-w-sm"
+      className="fixed bottom-4 right-4 left-4 sm:left-auto sm:bottom-6 sm:right-6 z-[100] max-w-sm"
     >
       <div className="rounded-2xl bg-[#0a0a1a]/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden">
         <div className="flex items-start gap-4 p-5">
@@ -115,9 +116,24 @@ export default function Contact() {
     e.preventDefault();
     setState("loading");
 
-    const payload = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceID || !templateID || !publicKey) {
+      setState("error");
+      setToast({
+        type: "error",
+        message:
+          "Email service not configured. Please contact the administrator.",
+      });
+      setTimeout(() => setState("idle"), 2000);
+      return;
+    }
+
+    const templateParams = {
+      from_name: nameRef.current.value,
+      from_email: emailRef.current.value,
       company: companyRef.current.value,
       team_size: teamRef.current.value,
       message: messageRef.current.value,
@@ -125,16 +141,7 @@ export default function Contact() {
     };
 
     try {
-      const url = import.meta.env.VITE_N8N_WEBHOOK_URL;
-      if (!url) throw new Error("Webhook URL not configured");
-
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) throw new Error(`Server responded with ${res.status}`);
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
       setState("success");
       setToast({
@@ -154,10 +161,7 @@ export default function Contact() {
       setState("error");
       setToast({
         type: "error",
-        message:
-          err.message === "Webhook URL not configured"
-            ? "Webhook URL not configured. Please contact the administrator."
-            : "Could not send your message. Please try again or email us directly.",
+        message: "Could not send your message. Please try again or email us directly.",
       });
       setTimeout(() => setState("idle"), 2000);
     }

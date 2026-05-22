@@ -3,7 +3,9 @@ services:
     build:
       context: .
       args:
-        VITE_N8N_WEBHOOK_URL: ${VITE_N8N_WEBHOOK_URL}
+        VITE_EMAILJS_SERVICE_ID: ${VITE_EMAILJS_SERVICE_ID}
+        VITE_EMAILJS_TEMPLATE_ID: ${VITE_EMAILJS_TEMPLATE_ID}
+        VITE_EMAILJS_PUBLIC_KEY: ${VITE_EMAILJS_PUBLIC_KEY}
     image: pulsemation-app:latest
     ports:
       - "8081:80"
