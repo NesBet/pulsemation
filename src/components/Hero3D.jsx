@@ -151,8 +151,8 @@ export default function Hero3D() {
             }
             className="mt-6 text-base sm:text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed"
           >
-            Pulsemation builds custom AI automation pipelines that reduce manual
-            work, accelerate operations, and scale with your business.
+            Pulsemation builds custom AI automation pipelines that eliminate
+            manual work, accelerate operations, and scale with your business.
           </motion.p>
 
           <motion.div
