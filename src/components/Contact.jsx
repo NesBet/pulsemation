@@ -378,7 +378,7 @@ export default function Contact() {
                   Message received!
                 </h3>
                 <p className="text-gray-400">
-                  Our team will reach out within 24 hours to schedule your free
+                  Our team will reach out within 72 hours to schedule your free
                   audit.
                 </p>
               </div>
