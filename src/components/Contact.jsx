@@ -140,6 +140,16 @@ export default function Contact() {
       source: "pulsemation-website",
     };
 
+    const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
+    if (webhookUrl) {
+      fetch(webhookUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify(templateParams),
+      }).catch(() => {});
+    }
+
     try {
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
