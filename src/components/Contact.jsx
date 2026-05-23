@@ -166,7 +166,7 @@ export default function Contact() {
       teamRef.current.value = "Team size";
       messageRef.current.value = "";
 
-      setTimeout(() => setState("idle"), 2000);
+      setTimeout(() => setState("idle"), 4000);
     } catch (err) {
       setState("error");
       setToast({
@@ -174,7 +174,7 @@ export default function Contact() {
         message:
           "Could not send your message. Please try again or email us directly.",
       });
-      setTimeout(() => setState("idle"), 2000);
+      setTimeout(() => setState("idle"), 4000);
     }
   };
 
@@ -249,7 +249,7 @@ export default function Contact() {
                   Message received!
                 </h3>
                 <p className="text-gray-400">
-                  Our team will reach out within 24 hours to schedule your free
+                  Our team will reach out within 72 hours to schedule your free
                   audit.
                 </p>
               </div>
