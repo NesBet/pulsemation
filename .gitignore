@@ -4,3 +4,4 @@ dist
 *.local
 .opencode
 .env
+.opencode
