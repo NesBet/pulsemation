@@ -32,7 +32,7 @@ const steps = [
 ];
 
 export default function About() {
-  const perf = usePerformance()
+  const perf = usePerformance();
 
   if (perf.reducedMotion) {
     return (
@@ -54,10 +54,11 @@ export default function About() {
                 <span className="gradient-text">We automate outcomes.</span>
               </h3>
               <p className="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
-                Pulsemation was founded by Nehemiah Kibet who saw that most
-                "automation" solutions were just fancy if-this-then-that rules. We
-                built a platform that actually thinks — combining process mining,
-                AI agents, and deep integrations into a single, managed service.
+                Pulsemation was founded by a team of engineers who saw that most
+                "automation" solutions were just fancy if-this-then-that rules.
+                We built a platform that actually thinks — combining process
+                mining, AI agents, and deep integrations into a single, managed
+                service.
               </p>
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 {stats.map((s) => (
@@ -65,14 +66,19 @@ export default function About() {
                     <div className="text-xl sm:text-2xl font-bold gradient-text">
                       {s.value}
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-500">{s.label}</div>
+                    <div className="text-xs sm:text-sm text-gray-500">
+                      {s.label}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
             <div className="space-y-0">
               {steps.map((step, i) => (
-                <div key={step.num} className="relative flex gap-4 sm:gap-6 pb-8 group">
+                <div
+                  key={step.num}
+                  className="relative flex gap-4 sm:gap-6 pb-8 group"
+                >
                   {i < steps.length - 1 && (
                     <div className="absolute left-[19px] top-10 bottom-0 w-px bg-gradient-to-b from-cyan-500/30 to-purple-600/30" />
                   )}
@@ -138,7 +144,9 @@ export default function About() {
                   <div className="text-xl sm:text-2xl font-bold gradient-text">
                     {s.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-500">{s.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-500">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -152,7 +160,10 @@ export default function About() {
             className="space-y-0"
           >
             {steps.map((step, i) => (
-              <div key={step.num} className="relative flex gap-4 sm:gap-6 pb-8 group">
+              <div
+                key={step.num}
+                className="relative flex gap-4 sm:gap-6 pb-8 group"
+              >
                 {i < steps.length - 1 && (
                   <div className="absolute left-[19px] top-10 bottom-0 w-px bg-gradient-to-b from-cyan-500/30 to-purple-600/30" />
                 )}

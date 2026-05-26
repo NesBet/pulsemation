@@ -144,8 +144,7 @@ export default function Contact() {
     if (webhookUrl) {
       fetch(webhookUrl, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(templateParams),
       }).catch(() => {});
     }
