@@ -250,7 +250,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Message received!
+                  Message sent!
                 </h3>
                 <p className="text-gray-400">
                   Our team will reach out within 72 hours to schedule your free
