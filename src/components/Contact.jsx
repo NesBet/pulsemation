@@ -141,10 +141,15 @@ export default function Contact() {
     };
 
     const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
+    const webhookKey = import.meta.env.VITE_WEBHOOK_KEY;
     if (webhookUrl) {
+      const headers = { "Content-Type": "application/json" };
+      if (webhookKey) {
+        headers["X-Webhook-Key"] = webhookKey;
+      }
       fetch(webhookUrl, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify(templateParams),
       }).catch(() => {});
     }
