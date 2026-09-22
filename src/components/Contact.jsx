@@ -61,15 +61,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setState("loading");
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    if (!serviceID || !templateID || !publicKey) {
-      setState("error");
-      setToast({ type: "error", message: "Email service not configured. Please contact the administrator." });
-      setTimeout(() => setState("idle"), 2000);
-      return;
-    }
+
     const templateParams = {
       from_name: nameRef.current.value,
       from_email: emailRef.current.value,
@@ -78,24 +70,76 @@ export default function Contact() {
       message: messageRef.current.value,
       source: "pulsemation-website",
     };
-    const webhookUrl = import.meta.env.WEBHOOK_URL;
-    const webhookKey = import.meta.env.WEBHOOK_KEY;
+
+    // Vite only exposes VITE_-prefixed vars — support legacy unprefixed as fallback
+    const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || import.meta.env.WEBHOOK_URL;
+    const webhookKey = import.meta.env.VITE_WEBHOOK_KEY || import.meta.env.WEBHOOK_KEY;
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const tasks = [];
+
+    // 1) Webhook — always attempted when configured; keepalive so it survives page transitions
     if (webhookUrl) {
       const headers = { "Content-Type": "application/json" };
       if (webhookKey) headers["X-Webhook-Key"] = webhookKey;
-      fetch(webhookUrl, { method: "POST", headers, body: JSON.stringify(templateParams) }).catch(() => {});
+      tasks.push(
+        fetch(webhookUrl, {
+          method: "POST",
+          headers,
+          body: JSON.stringify(templateParams),
+          keepalive: true,
+        })
+          .then(async (res) => {
+            if (!res.ok) {
+              const text = await res.text().catch(() => "");
+              throw new Error(`Webhook ${res.status}: ${text.slice(0, 200)}`);
+            }
+            return true;
+          })
+          .then(
+            () => ({ ok: true, channel: "webhook" }),
+            (err) => ({ ok: false, channel: "webhook", err }),
+          ),
+      );
     }
-    try {
-      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+
+    // 2) EmailJS — only if configured
+    if (serviceID && templateID && publicKey) {
+      tasks.push(
+        emailjs
+          .send(serviceID, templateID, templateParams, publicKey)
+          .then(
+            () => ({ ok: true, channel: "email" }),
+            (err) => ({ ok: false, channel: "email", err }),
+          ),
+      );
+    }
+
+    if (tasks.length === 0) {
+      setState("error");
+      setToast({ type: "error", message: "Email service not configured. Please contact the administrator." });
+      setTimeout(() => setState("idle"), 2500);
+      return;
+    }
+
+    const results = await Promise.all(tasks);
+    const succeeded = results.some((r) => r.ok);
+
+    if (succeeded) {
       setState("success");
       setToast({ type: "success", message: "Our team will reach out within 72 hours to schedule your free audit." });
-      nameRef.current.value = "";
-      emailRef.current.value = "";
-      companyRef.current.value = "";
-      teamRef.current.value = "";
-      messageRef.current.value = "";
+      if (nameRef.current) nameRef.current.value = "";
+      if (emailRef.current) emailRef.current.value = "";
+      if (companyRef.current) companyRef.current.value = "";
+      if (teamRef.current) teamRef.current.value = "";
+      if (messageRef.current) messageRef.current.value = "";
+      console.log("[contact] delivered via:", results.filter((r) => r.ok).map((r) => r.channel).join(", "));
       setTimeout(() => setState("idle"), 4000);
-    } catch (err) {
+    } else {
+      const firstErr = results.find((r) => !r.ok)?.err;
+      console.warn("[contact] all channels failed:", results, firstErr);
       setState("error");
       setToast({ type: "error", message: "Could not send your message. Please try again or email us directly." });
       setTimeout(() => setState("idle"), 4000);
