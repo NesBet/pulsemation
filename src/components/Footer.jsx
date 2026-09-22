@@ -119,7 +119,7 @@ export default function Footer({ onNavigate }) {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             <span>Heartbeat of Automation</span>
             <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline">PULSE • CONNECT • WORK</span>
+            <span className="hidden sm:inline">AUTOMATE • CONNECT • WORK</span>
           </div>
         </div>
       </div>
