@@ -1,5 +1,7 @@
 import { lazy, Suspense, useState, useCallback, useEffect } from 'react'
 import Navbar from './components/Navbar'
+import ScrollProgress from './components/ScrollProgress'
+import Marquee from './components/Marquee'
 import AboutPage from './components/AboutPage'
 import CareersPage from './components/CareersPage'
 import PrivacyPage from './components/PrivacyPage'
@@ -83,7 +85,9 @@ export default function App() {
 
   if (PageComponent) {
     return (
-      <div className="min-h-screen bg-[#0a0a1a]">
+      <div className="min-h-screen bg-[#05070A] selection:bg-[#00E5FF] selection:text-[#05070A]">
+        <div className="noise" />
+        <ScrollProgress />
         <Navbar />
         <PageComponent onBack={handleBack} />
       </div>
@@ -91,11 +95,14 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a1a]">
+    <div className="min-h-screen bg-[#05070A] selection:bg-[#00E5FF] selection:text-[#05070A]">
+      <div className="noise" />
+      <ScrollProgress />
       <Navbar />
       <Suspense fallback={<Spinner />}>
         <Hero3D />
       </Suspense>
+      <Marquee items={['PIPELINE AUTOMATION', 'AI AGENTS', 'PROCESS MINING', 'INTEGRATION HUB', '99.9% UPTIME', '200+ INTEGRATIONS', '10K+ HOURS SAVED']} />
       <Suspense fallback={null}>
         <Services />
         <About />
