@@ -78,8 +78,8 @@ export default function Contact() {
       message: messageRef.current.value,
       source: "pulsemation-website",
     };
-    const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
-    const webhookKey = import.meta.env.VITE_WEBHOOK_KEY;
+    const webhookUrl = import.meta.env.WEBHOOK_URL;
+    const webhookKey = import.meta.env.WEBHOOK_KEY;
     if (webhookUrl) {
       const headers = { "Content-Type": "application/json" };
       if (webhookKey) headers["X-Webhook-Key"] = webhookKey;
