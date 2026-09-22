@@ -314,21 +314,7 @@ export default function Hero3D() {
               </div>
             </div>
 
-            {/* floating badge */}
-            <motion.div
-              initial={perf.reducedMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6, ease }}
-              className="absolute -bottom-4 -left-2 sm:-left-4 bg-white text-[#05070A] rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.4)] px-4 py-3 flex items-center gap-3 border border-black/5"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#05070A] text-white flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
-              </div>
-              <div>
-                <div className="font-semibold text-xs leading-none">Automation active</div>
-                <div className="font-mono text-[11px] text-black/50">42 workflows • 0 failures today</div>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
       </motion.div>
