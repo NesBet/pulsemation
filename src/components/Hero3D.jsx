@@ -135,7 +135,7 @@ export default function Hero3D() {
               className="font-display font-bold tracking-[-0.04em] leading-[0.9] text-white mt-6 sm:mt-8 text-balance"
               style={{ fontSize: "clamp(2.6rem, 6.2vw, 5.25rem)" }}
             >
-              <span className="block">Workflows that</span>
+              <span className="block">Automations that</span>
               <span className="block">
                 <Typewriter />
               </span>
