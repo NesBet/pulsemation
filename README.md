@@ -1,8 +1,8 @@
-# Pulsemation
+# Palsemation
 
 **Intelligent Automation as a Service** — A marketing website for a B2B automation startup, built with React, Three.js, and Tailwind CSS.
 
-Pulsemation builds, deploys, and manages AI-powered automation workflows for modern teams. This repo is the company's single-page marketing site with immersive 3D visuals, performance-adaptive rendering, and PWA support.
+Palsemation builds, deploys, and manages AI-powered automation workflows for modern teams. This repo is the company's single-page marketing site with immersive 3D visuals, performance-adaptive rendering, and PWA support.
 
 ## Tech Stack
 
@@ -163,7 +163,7 @@ The service worker is only registered on devices with more than 2 CPU cores and 
 
 ## License
 
-All rights reserved. This project is proprietary software owned by Pulsemation.
+All rights reserved. This project is proprietary software owned by Palsemation.
 
 ## Contact
 

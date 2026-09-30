@@ -74,14 +74,14 @@ export default function Navbar() {
           {/* left: logo */}
           <a href="#" className="flex items-center gap-3 group shrink-0 pl-1">
             <div className="relative w-9 h-9 rounded-full overflow-hidden ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-500">
-              <img src="/favicon.png" alt="Pulsemation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]" />
+              <img src="/favicon.png" alt="Palsemation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]" />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-full pointer-events-none" />
             </div>
             <div className="hidden sm:block">
-              <div className="font-display font-bold text-white tracking-[-0.02em] text-[14px] leading-none">PULSEMATION</div>
+              <div className="font-display font-bold text-white tracking-[-0.02em] text-[14px] leading-none">PALSEMATION</div>
               <div className="font-mono text-[9px] tracking-[0.16em] text-white/40 -mt-0.5">AUTOMATION LABS</div>
             </div>
-            <span className="sm:hidden font-display font-bold text-white tracking-tight text-[13px]">PULSEMATION</span>
+            <span className="sm:hidden font-display font-bold text-white tracking-tight text-[13px]">PALSEMATION</span>
           </a>
 
           {/* center: links - desktop */}

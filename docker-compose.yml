@@ -1,6 +1,6 @@
 services:
-  pulsemation:
-    container_name: pulsemation
+  palsemation:
+    container_name: palsemation
     build:
       context: .
       args:
@@ -9,7 +9,7 @@ services:
         VITE_EMAILJS_PUBLIC_KEY: ${VITE_EMAILJS_PUBLIC_KEY}
         VITE_WEBHOOK_URL: ${VITE_WEBHOOK_URL}
         VITE_WEBHOOK_KEY: ${VITE_WEBHOOK_KEY}
-    image: pulsemation-app:latest
+    image: palsemation-app:latest
     ports:
       - "8081:80"
     env_file:

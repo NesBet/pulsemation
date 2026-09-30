@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 
 const sections = [
-  { title: 'Acceptance of Terms', content: "By accessing or using Pulsemation's services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services." },
-  { title: 'Services Description', content: 'Pulsemation provides AI-powered workflow automation, process mining, and integration services. We reserve the right to modify, suspend, or discontinue any aspect of our services with reasonable notice.' },
+  { title: 'Acceptance of Terms', content: "By accessing or using Palsemation's services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services." },
+  { title: 'Services Description', content: 'Palsemation provides AI-powered workflow automation, process mining, and integration services. We reserve the right to modify, suspend, or discontinue any aspect of our services with reasonable notice.' },
   { title: 'User Obligations', content: 'You agree to use our services in compliance with all applicable laws and regulations. You must not misuse our platform, interfere with its operation, or attempt to access areas without authorization.' },
-  { title: 'Intellectual Property', content: 'All content, trademarks, and intellectual property on our platform are owned by Pulsemation or our licensors. You may not reproduce, distribute, or create derivative works without our express permission.' },
-  { title: 'Limitation of Liability', content: 'Pulsemation shall not be liable for any indirect, incidental, or consequential damages arising from your use of our services. Our total liability is limited to the amount paid by you in the preceding 12 months.' },
+  { title: 'Intellectual Property', content: 'All content, trademarks, and intellectual property on our platform are owned by Palsemation or our licensors. You may not reproduce, distribute, or create derivative works without our express permission.' },
+  { title: 'Limitation of Liability', content: 'Palsemation shall not be liable for any indirect, incidental, or consequential damages arising from your use of our services. Our total liability is limited to the amount paid by you in the preceding 12 months.' },
   { title: 'Termination', content: 'Either party may terminate this agreement with 30 days written notice. We may terminate immediately if you breach any material term. Upon termination, your access to the services will cease.' },
   { title: 'Governing Law', content: 'These terms are governed by the laws of the Republic of Kenya. Any disputes shall be resolved through binding arbitration in accordance with the rules of the Nairobi Centre for International Arbitration.' },
 ]

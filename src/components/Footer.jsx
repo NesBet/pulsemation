@@ -38,10 +38,10 @@ export default function Footer({ onNavigate }) {
           <div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-xl overflow-hidden ring-1 ring-white/10">
-                <img src="/favicon.jpg" alt="Pulsemation" className="w-full h-full object-cover" />
+                <img src="/favicon.jpg" alt="Palsemation" className="w-full h-full object-cover" />
               </div>
               <div>
-                <div className="font-display font-bold tracking-tight text-white text-sm leading-none">PULSEMATION</div>
+                <div className="font-display font-bold tracking-tight text-white text-sm leading-none">PALSEMATION</div>
                 <div className="font-mono text-[10px] tracking-[0.14em] text-white/30 leading-none mt-0.5">AUTOMATION LABS</div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function Footer({ onNavigate }) {
 
         <div className="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-mono text-[11px] tracking-wide text-white/30">
-            © {new Date().getFullYear()} Pulsemation, Inc. All rights reserved. Crafted in Nairobi.
+            © {new Date().getFullYear()} Palsemation, Inc. All rights reserved. Crafted in Nairobi.
           </p>
           <div className="flex items-center gap-2 font-mono text-[11px] text-white/25">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />

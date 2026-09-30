@@ -24,7 +24,7 @@ export default function AboutPage({ onBack }) {
               We build the <span className="gradient-text">future of work</span>
             </h1>
             <p className="mt-6 text-white/55 leading-relaxed text-[15px] max-w-[60ch] mx-auto text-pretty">
-              Pulsemation was founded by Nehemiah Kibet with a singular mission: replace brittle,
+              Palsemation was founded by Nehemiah Kibet with a singular mission: replace brittle,
               manual workflows with intelligent, self-optimizing automation. We combine process mining,
               AI agents, and deep integrations into a single, managed service that adapts as you grow.
             </p>

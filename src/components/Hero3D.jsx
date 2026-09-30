@@ -148,7 +148,7 @@ export default function Hero3D() {
               transition={{ duration: 0.7, delay: 0.22, ease }}
               className="mt-5 sm:mt-6 text-[15px] sm:text-[17px] leading-relaxed text-white/60 max-w-[52ch] text-pretty"
             >
-              Pulsemation builds custom AI automation pipelines that eliminate manual work, accelerate
+              Palsemation builds custom AI automation pipelines that eliminate manual work, accelerate
               operations, and scale with your business — from audit to autopilot.
             </motion.p>
 
@@ -235,7 +235,7 @@ export default function Hero3D() {
                       <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
                       <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
                     </div>
-                    <span className="font-mono text-[11px] tracking-wide text-white/40 hidden sm:inline">pipeline.config.json — Pulsemation</span>
+                    <span className="font-mono text-[11px] tracking-wide text-white/40 hidden sm:inline">pipeline.config.json — Palsemation</span>
                     <span className="font-mono text-[11px] tracking-wide text-white/40 sm:hidden">pipeline.json</span>
                   </div>
                   <span className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-wide text-emerald-400 bg-emerald-500/10 border border-emerald-500/15 rounded-full px-2.5 py-1">

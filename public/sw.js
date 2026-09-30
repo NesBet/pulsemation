@@ -1,4 +1,4 @@
-const CACHE = 'pulsemation-v1'
+const CACHE = 'palsemation-v1'
 
 const ASSETS = [
   '/',

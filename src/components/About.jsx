@@ -40,7 +40,7 @@ export default function About() {
           <span className="gradient-text">We automate outcomes.</span>
         </h3>
         <p className="mt-4 text-[14.5px] leading-relaxed text-white/55 max-w-[52ch] text-pretty">
-          Pulsemation was founded by Nehemiah Kibet who saw that most “automation” was just fancy
+          Palsemation was founded by Nehemiah Kibet who saw that most “automation” was just fancy
           if-this-then-that rules. We built a platform that actually thinks — combining process mining,
           AI agents, and deep integrations into a single managed service that learns as you scale.
         </p>
@@ -60,7 +60,7 @@ export default function About() {
         <div className="mt-6 double-bezel">
           <div className="double-bezel-inner overflow-hidden">
             <img
-              src="https://picsum.photos/seed/pulsemation-team/800/520"
+              src="https://picsum.photos/seed/palsemation-team/800/520"
               alt="Team collaborating around automation pipeline"
               className="w-full h-[220px] sm:h-[260px] object-cover opacity-90"
               loading="lazy"
@@ -161,7 +161,7 @@ export default function About() {
                   We don't just automate tasks.<br /><span className="gradient-text">We automate outcomes.</span>
                 </h3>
                 <p className="mt-4 text-[14.5px] leading-relaxed text-white/55 max-w-[52ch] text-pretty">
-                  Pulsemation was founded by Nehemiah Kibet who saw that most “automation” was just fancy if-this-then-that rules. We built a platform that actually thinks — combining process mining, AI agents, and deep integrations into a single managed service that learns as you scale.
+                  Palsemation was founded by Nehemiah Kibet who saw that most “automation” was just fancy if-this-then-that rules. We built a platform that actually thinks — combining process mining, AI agents, and deep integrations into a single managed service that learns as you scale.
                 </p>
                 <div className="mt-8 grid grid-cols-2 gap-3">
                   {stats.map((s, idx) => (
@@ -174,7 +174,7 @@ export default function About() {
                 </div>
                 <div className="mt-6 double-bezel">
                   <div className="double-bezel-inner overflow-hidden">
-                    <img src="https://picsum.photos/seed/pulsemation-team/800/520" alt="Team collaborating" className="w-full h-[220px] sm:h-[260px] object-cover opacity-90" loading="lazy" />
+                    <img src="https://picsum.photos/seed/palsemation-team/800/520" alt="Team collaborating" className="w-full h-[220px] sm:h-[260px] object-cover opacity-90" loading="lazy" />
                     <div className="flex items-center justify-between px-4 py-3 bg-[#0A0C1A]">
                       <span className="font-mono text-[11px] tracking-wide text-white/40">Nairobi • Remote • Global</span>
                       <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-emerald-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Building daily</span>
