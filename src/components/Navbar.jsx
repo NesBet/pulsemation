@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* left: logo */}
           <a href="#" className="flex items-center gap-3 group shrink-0 pl-1">
             <div className="relative w-9 h-9 rounded-full overflow-hidden ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-500">
-              <img src="/favicon.jpg" alt="Pulsemation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]" />
+              <img src="/favicon.png" alt="Pulsemation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]" />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-full pointer-events-none" />
             </div>
             <div className="hidden sm:block">
